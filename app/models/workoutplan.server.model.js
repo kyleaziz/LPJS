@@ -32,4 +32,10 @@ WorkoutplanSchema.add({description: {
 		trim: true
 	}});
 
+WorkoutplanSchema.add({tasks: [{
+		type: String,
+		default: '',
+		trim: true
+	}]});
+
 mongoose.model('Workoutplan', WorkoutplanSchema);
