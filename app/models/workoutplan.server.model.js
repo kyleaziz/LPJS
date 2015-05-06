@@ -28,14 +28,11 @@ var WorkoutplanSchema = new Schema({
 
 WorkoutplanSchema.add({description: {
 		type: String,
-		default: '',
+		default: 'lift',
 		trim: true
 	}});
 
-WorkoutplanSchema.add({tasks: [{
-		type: String,
-		default: '',
-		trim: true
-	}]});
+WorkoutplanSchema.add({tasks: [
+	]});
 
 mongoose.model('Workoutplan', WorkoutplanSchema);

@@ -1,0 +1,25 @@
+{
+  Name: "Clean",
+  Base Lift: "CleanAndJerk",
+  Target Reps: 6,
+  Target Sets: 3,
+  Target Percentage: 50,
+  Measure: "Weight"
+},
+{
+  Name: "Push Press"
+  Base Lift: "CleanAndJerk",
+  Target Reps: 6,
+  Target Sets: 3,
+  Target Percentage: 50,
+  Measure: "Weight"
+
+},
+{
+  Name: "Back Squat",
+  Base Lift: "Squat",
+  Target Reps: 6,
+  Target Sets: 3,
+  Target Percentage: 50,
+  Measure: "Weight"
+}

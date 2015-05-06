@@ -19,4 +19,16 @@
 		</em>
 	</small>
 	<p class="lead" data-ng-bind="workoutplan.description"></p>
+
+	<div class="list-group">
+        <div data-ng-repeat="task in workoutplan.tasks" class="list-group-item">
+						<h4 class="list-group-item-heading" data-ng-bind="task.name"></h4>
+            <p>
+            	{{task.sets}} Sets x {{task.reps}} Reps <br/>
+            	<span ng-show="task.baseLift"> The weight is {{task.weight}} % of your {{task.baseLift}} one rep max </span>
+            	<span ng-hide="task.baseLift"> The weight is {{task.weight}} lbs</span>
+            </p>
+
+        </div>
+    </div>
 </section>
