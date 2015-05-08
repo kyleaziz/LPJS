@@ -4,7 +4,13 @@
 angular.module('workoutplans').controller('WorkoutplansController', ['$scope', '$stateParams', '$location', 'Authentication', 'Workoutplans',
 	function($scope, $stateParams, $location, Authentication, Workoutplans) {
 		$scope.authentication = Authentication;
-
+		$scope.bases = [
+			{name: "Squat", lift: "squat"}, 
+			{name: "Deadlift", lift: "deadlift"}, 
+			{name: "Bench Press", lift: "benchPress"}, 
+			{name: "Clean and Jerk", lift: "cleanJerk"}, 
+			{name: "Snatch", lift: "snatch"}
+		];
 		// Create new Workoutplan
 		$scope.create = function() {
 			// Create new Workoutplan object
@@ -44,6 +50,25 @@ angular.module('workoutplans').controller('WorkoutplansController', ['$scope', '
 
 		// Update existing Workoutplan
 		$scope.update = function() {
+			var workoutplan = $scope.workoutplan;
+
+			workoutplan.$update(function() {
+				$location.path('workoutplans/' + workoutplan._id);
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+		// Add a task to existing workout
+		$scope.addTask = function() {
+			$scope.workoutplan.tasks.push({
+				name: $scope.addTaskName,
+				sets: $scope.addTaskSets,
+				reps: $scope.addTaskReps,
+				baseLift: $scope.addTaskBaseLift,
+				weight: $scope.addTaskWeight
+			});
+
 			var workoutplan = $scope.workoutplan;
 
 			workoutplan.$update(function() {
