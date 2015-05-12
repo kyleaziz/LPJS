@@ -13,7 +13,7 @@ var WotaskSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Wotask name',
+		required: 'Please fill in a Task name',
 		trim: true
 	},
 	description: {
@@ -23,7 +23,6 @@ var WotaskSchema = new Schema({
 	},
 	baseLift: {
 		type: String,
-		default: '',
 		trim: true
 	},
 	created: {
@@ -33,7 +32,24 @@ var WotaskSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	reps: {
+		type: Number
+	},
+	sets: {
+		type: Number
+	},
+	style: {
+		type: String,
+		default: 'Percent'
+	},
+	percent: {
+		type: Number
+	},
+	workout: {
+		type: Schema.ObjectId, ref: 'Workoutplan'
 	}
+
 });
 
 mongoose.model('Wotask', WotaskSchema);

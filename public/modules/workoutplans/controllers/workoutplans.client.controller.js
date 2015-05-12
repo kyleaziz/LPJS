@@ -5,11 +5,12 @@ angular.module('workoutplans').controller('WorkoutplansController', ['$scope', '
 	function($scope, $stateParams, $location, Authentication, Workoutplans) {
 		$scope.authentication = Authentication;
 		$scope.bases = [
-			{name: "Squat", lift: "squat"}, 
-			{name: "Deadlift", lift: "deadlift"}, 
-			{name: "Bench Press", lift: "benchPress"}, 
-			{name: "Clean and Jerk", lift: "cleanJerk"}, 
-			{name: "Snatch", lift: "snatch"}
+			{name: 'Squat', lift: 'squat'}, 
+			{name: 'Deadlift', lift: 'deadlift'}, 
+			{name: 'Bench Press', lift: 'benchPress'}, 
+			{name: 'Clean and Jerk', lift: 'cleanJerk'}, 
+			{name: 'Snatch', lift: 'snatch'},
+			{name: 'Front Squat', lift: 'frontSquat'}
 		];
 		// Create new Workoutplan
 		$scope.create = function() {

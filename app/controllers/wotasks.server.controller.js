@@ -14,6 +14,7 @@ var mongoose = require('mongoose'),
 exports.create = function(req, res) {
 	var wotask = new Wotask(req.body);
 	wotask.user = req.user;
+	wotask.workout = req.workoutplan; //Add workoutplan to the wotask
 
 	wotask.save(function(err) {
 		if (err) {

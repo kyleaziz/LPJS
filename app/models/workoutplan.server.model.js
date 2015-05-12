@@ -35,4 +35,7 @@ WorkoutplanSchema.add({description: {
 WorkoutplanSchema.add({tasks: [
 	]});
 
+WorkoutplanSchema.add({
+	subTasks: [{type: Schema.ObjectId, ref: 'woTasks'}]
+});
 mongoose.model('Workoutplan', WorkoutplanSchema);

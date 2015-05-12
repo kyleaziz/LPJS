@@ -12,8 +12,8 @@ angular.module('wotasks').controller('WotasksController', ['$scope', '$statePara
 				name: this.name
 			});
 
-			// Redirect after save
 			wotask.$save(function(response) {
+				// Redirect after save
 				$location.path('wotasks/' + response._id);
 
 				// Clear form fields
