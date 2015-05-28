@@ -1,6 +1,6 @@
 <section data-ng-controller="WorkoutplansController">
     <div class="page-header">
-        <h1>New Workoutplan</h1>
+        <h1>New Workout</h1>
     </div>
     <div class="col-md-12">
         <form class="form-horizontal" data-ng-submit="create()" novalidate>
@@ -15,6 +15,24 @@
                     <label class="control-label" for="description">Description</label>
                     <div class="controls">
                         <input type="text" data-ng-model="description" id="description" class="form-control" placeholder="Description">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="phase">Phase</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="phase" id="phase" class="form-control" placeholder="Phase" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="woDate">Date</label>
+                    <div class="controls">
+                        <input type="date" data-ng-model="woDate" id="woDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="program">Program</label>
+                    <div class="controls">
+                        <select data-ng-model="program" id="program" class="form-control" ng-options="p as p for p in programs"></select>
                     </div>
                 </div>
                 <div class="form-group">

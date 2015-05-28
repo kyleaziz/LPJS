@@ -12,12 +12,23 @@ angular.module('workoutplans').controller('WorkoutplansController', ['$scope', '
 			{name: 'Snatch', lift: 'snatch'},
 			{name: 'Front Squat', lift: 'frontSquat'}
 		];
+		$scope.programs = [ 'Group Training', 'Athletes', 'BABEies', 'Performance', 'Bootcamp', 'Lift'
+			//{name: 'Group Training'},
+			//{name: 'Athletes'},
+			//{name: 'BABEies'},
+			//{name: 'Performance'},
+			//{name: 'Bootcamp'},
+			//{name: 'Lift'}
+		];
 		// Create new Workoutplan
 		$scope.create = function() {
 			// Create new Workoutplan object
 			var workoutplan = new Workoutplans ({
 				name: this.name,
-				description: this.description
+				description: this.description,
+				woDate: this.woDate,
+				phase: this.phase,
+				program: this.program
 			});
 
 			// Redirect after save
@@ -27,6 +38,9 @@ angular.module('workoutplans').controller('WorkoutplansController', ['$scope', '
 				// Clear form fields
 				$scope.name = '';
 				$scope.description = '';
+				$scope.woDate = '';
+				$scope.phase = '';
+				$scope.program = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});

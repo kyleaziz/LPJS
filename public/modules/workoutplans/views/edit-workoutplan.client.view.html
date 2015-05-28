@@ -18,6 +18,25 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label class="control-label" for="phase">Phase</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="workoutplan.phase" id="phase" class="form-control" placeholder="Phase" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="woDate">Date</label>
+                    <div class="controls">
+                        <input type="date" data-ng-model="workoutplan.woDate" id="woDate" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="program">Program</label>
+                    <div class="controls">
+                        <select ng-init="workoutplan.program" data-ng-model="workoutplan.program" id="program" class="form-control" ng-options="p as p for p in programs">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default">
                 </div>
 				<div data-ng-show="error" class="text-danger">
